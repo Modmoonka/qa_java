@@ -13,7 +13,6 @@ public class CatTest {
 
     @Mock
     Feline feline = new Feline();
-
     Cat cat = new Cat(feline);
 
     @Test

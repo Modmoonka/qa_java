@@ -1,8 +1,7 @@
 import com.example.Feline;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
@@ -10,9 +9,12 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
+    Feline feline;
 
-    @Spy
-    Feline feline = new Feline();
+    @Before
+    public void before() {
+        feline = new Feline();
+    }
 
     @Test
     public void eatMeatTest() throws Exception {
@@ -26,7 +28,6 @@ public class FelineTest {
 
     @Test
     public void getKittensNoParamsTest() {
-        Mockito.when(feline.getKittens(1)).thenReturn(1);
         assertEquals(1, feline.getKittens());
     }
 

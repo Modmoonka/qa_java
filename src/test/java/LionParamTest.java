@@ -19,6 +19,9 @@ public class LionParamTest {
         this.hasMane = hasMane;
     }
 
+    @Mock
+    Feline feline;
+
     @Parameterized.Parameters
     public static Object[][] LionParamTestData() {
         return new Object[][] {
@@ -26,9 +29,6 @@ public class LionParamTest {
                 {"Самка", false},
         };
     }
-
-    @Mock
-    Feline feline;
 
     @Before
     public void init() {
